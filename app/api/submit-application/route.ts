@@ -3,8 +3,6 @@ import { NextRequest, NextResponse } from 'next/server';
 // Интерфейс для данных формы
 interface ApplicationData {
   firstName: string;
-  lastName: string;
-  company: string;
   email: string;
   telegram: string;
   mvpDescription: string;
@@ -16,7 +14,7 @@ export async function POST(request: NextRequest) {
     const data: ApplicationData = await request.json();
 
     // Проверка обязательных полей
-    if (!data.firstName || !data.lastName || !data.email || !data.telegram || !data.mvpDescription) {
+    if (!data.firstName  || !data.email || !data.telegram || !data.mvpDescription) {
       return NextResponse.json(
         { error: 'Пожалуйста, заполните все обязательные поля' },
         { status: 400 }
@@ -27,8 +25,7 @@ export async function POST(request: NextRequest) {
     const message = `
 🚀 <b>Новая заявка с NeuroTailor</b>
 
-👤 <b>Имя:</b> ${escapeHtml(data.firstName)} ${escapeHtml(data.lastName)}
-🏢 <b>Компания:</b> ${data.company ? escapeHtml(data.company) : 'Не указана'}
+👤 <b>Имя:</b> ${escapeHtml(data.firstName)}
 📧 <b>Email:</b> ${escapeHtml(data.email)}
 💬 <b>Telegram:</b> ${escapeHtml(data.telegram)}
 📍 <b>Источник:</b> ${escapeHtml(data.source)}
