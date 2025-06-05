@@ -26,49 +26,49 @@ export default function NeuroTailorLanding() {
 
   const pricingPlans = [
     {
-      name: 'Starter',
-      price: '$999',
-      period: '/month',
-      mvps: '1 MVP per month',
+      name: 'Старт',
+      price: '₽99,900',
+      period: '/месяц',
+      mvps: '1 MVP в месяц',
       features: [
-        'Up to 10 screens',
-        '48-hour delivery',
-        'Basic functionality',
-        'Free hosting included',
-        'Source code access',
-        'Email support'
+        'До 10 экранов',
+        'Доставка за 48 часов',
+        'Базовый функционал',
+        'Бесплатный хостинг',
+        'Доступ к исходному коду',
+        'Email поддержка'
       ],
       color: 'from-blue-500 to-cyan-400',
       popular: false
     },
     {
-      name: 'Growth',
-      price: '$2,499',
-      period: '/month',
-      mvps: '3 MVPs per month',
+      name: 'Рост',
+      price: '₽249,900',
+      period: '/месяц',
+      mvps: '3 MVP в месяц',
       features: [
-        'Up to 15 screens per MVP',
-        '24-48 hour delivery',
-        'API integrations',
-        'Blockchain support',
-        'Priority support',
-        'Custom branding'
+        'До 15 экранов на MVP',
+        'Доставка за 24-48 часов',
+        'API интеграции',
+        'Поддержка блокчейна',
+        'Приоритетная поддержка',
+        'Кастомный брендинг'
       ],
       color: 'from-purple-500 to-pink-500',
       popular: true
     },
     {
-      name: 'Scale',
-      price: '$4,999',
-      period: '/month',
-      mvps: '5 MVPs per month',
+      name: 'Масштаб',
+      price: '₽499,900',
+      period: '/месяц',
+      mvps: '5 MVP в месяц',
       features: [
-        'Unlimited screens',
-        'Priority queue',
-        'External API access',
-        'Dedicated manager',
-        'White-label option',
-        'Custom AI training'
+        'Неограниченно экранов',
+        'Приоритетная очередь',
+        'Внешние API',
+        'Персональный менеджер',
+        'White-label опция',
+        'Кастомное обучение AI'
       ],
       color: 'from-orange-500 to-red-500',
       popular: false
@@ -77,30 +77,30 @@ export default function NeuroTailorLanding() {
 
   const testimonials = [
     {
-      name: "Sarah Chen",
-      role: "Founder, TechStart",
-      content: "NeuroTailor helped me validate 3 different ideas in just one month. The AI-generated MVPs were impressive enough to secure my pre-seed funding.",
+      name: "Сара Чен",
+      role: "Основатель, TechStart",
+      content: "NeuroTailor помог мне протестировать 3 разные идеи всего за один месяц. AI-сгенерированные MVP произвели впечатление на инвесторов и помогли привлечь pre-seed финансирование.",
       avatar: "👩‍💼"
     },
     {
-      name: "Michael Rodriguez",
-      role: "Serial Entrepreneur",
-      content: "I've launched 5 successful products using NeuroTailor. The speed and quality are unmatched. It's like having a entire dev team at your fingertips.",
+      name: "Михаил Родригес",
+      role: "Серийный предприниматель",
+      content: "Я запустил 5 успешных продуктов с помощью NeuroTailor. Скорость и качество не имеют аналогов. Это как иметь целую команду разработчиков под рукой.",
       avatar: "👨‍💻"
     },
     {
-      name: "Emma Watson",
-      role: "Product Manager, Fortune 500",
-      content: "We use NeuroTailor for rapid prototyping. What used to take 3 months now takes 2 days. It's revolutionized our innovation process.",
+      name: "Эмма Ватсон",
+      role: "Продакт-менеджер, Fortune 500",
+      content: "Мы используем NeuroTailor для быстрого прототипирования. То, что раньше занимало 3 месяца, теперь занимает 2 дня. Это революция в нашем процессе инноваций.",
       avatar: "👩‍🔬"
     }
   ];
 
   const stats = [
-    { number: "500+", label: "MVPs Created", icon: <Rocket className="w-6 h-6" /> },
-    { number: "24h", label: "Average Delivery", icon: <Clock className="w-6 h-6" /> },
-    { number: "94%", label: "Success Rate", icon: <BarChart className="w-6 h-6" /> },
-    { number: "$187", label: "Cost per MVP", icon: <DollarSign className="w-6 h-6" /> }
+    { number: "500+", label: "Созданных MVP", icon: <Rocket className="w-6 h-6" /> },
+    { number: "24ч", label: "Средняя доставка", icon: <Clock className="w-6 h-6" /> },
+    { number: "94%", label: "Успешность", icon: <BarChart className="w-6 h-6" /> },
+    { number: "₽18,700", label: "Стоимость за MVP", icon: <DollarSign className="w-6 h-6" /> }
   ];
 
   return (
@@ -138,12 +138,12 @@ export default function NeuroTailorLanding() {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="hover:text-purple-400 transition-colors">Features</a>
-              <a href="#how-it-works" className="hover:text-purple-400 transition-colors">How it Works</a>
-              <a href="#pricing" className="hover:text-purple-400 transition-colors">Pricing</a>
-              <a href="#testimonials" className="hover:text-purple-400 transition-colors">Testimonials</a>
+              <a href="#features" className="hover:text-purple-400 transition-colors">Возможности</a>
+              <a href="#how-it-works" className="hover:text-purple-400 transition-colors">Как это работает</a>
+              <a href="#pricing" className="hover:text-purple-400 transition-colors">Тарифы</a>
+              <a href="#testimonials" className="hover:text-purple-400 transition-colors">Отзывы</a>
               <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105">
-                Start Building
+                Начать создавать
               </button>
             </div>
 
@@ -157,12 +157,12 @@ export default function NeuroTailorLanding() {
         {isMenuOpen && (
           <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10">
             <div className="px-4 py-6 space-y-4">
-              <a href="#features" className="block hover:text-purple-400 transition-colors">Features</a>
-              <a href="#how-it-works" className="block hover:text-purple-400 transition-colors">How it Works</a>
-              <a href="#pricing" className="block hover:text-purple-400 transition-colors">Pricing</a>
-              <a href="#testimonials" className="block hover:text-purple-400 transition-colors">Testimonials</a>
+              <a href="#features" className="block hover:text-purple-400 transition-colors">Возможности</a>
+              <a href="#how-it-works" className="block hover:text-purple-400 transition-colors">Как это работает</a>
+              <a href="#pricing" className="block hover:text-purple-400 transition-colors">Тарифы</a>
+              <a href="#testimonials" className="block hover:text-purple-400 transition-colors">Отзывы</a>
               <button className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg">
-                Start Building
+                Начать создавать
               </button>
             </div>
           </div>
@@ -174,29 +174,29 @@ export default function NeuroTailorLanding() {
         <div className="max-w-7xl mx-auto text-center z-10">
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full px-4 py-2 mb-6">
             <Sparkles className="w-4 h-4 text-purple-400" />
-            <span className="text-sm text-purple-300">AI-Powered MVP Development</span>
+            <span className="text-sm text-purple-300">AI-разработка MVP</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            From Idea to MVP in
+            От идеи до MVP за
             <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent animate-gradient">
-              24 Hours
+              24 часа
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Let AI agents build your startup MVP while you sleep. 
-            No coding required. Investor-ready in days, not months.
+            Пусть AI-агенты создадут MVP вашего стартапа, пока вы спите. 
+            Без программирования. Готово для инвесторов за дни, а не месяцы.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold text-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
-              Start Building Now
+              Начать создавать сейчас
               <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <button className="group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all">
               <Play className="inline-block mr-2 w-5 h-5" />
-              Watch Demo
+              Смотреть демо
             </button>
           </div>
 
@@ -230,11 +230,11 @@ export default function NeuroTailorLanding() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Build Anything with
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> AI Agents</span>
+              Создавайте что угодно с
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> AI-агентами</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Our AI agents handle everything from design to deployment
+              Наши AI-агенты берут на себя всё: от дизайна до деплоя
             </p>
           </div>
 
@@ -242,20 +242,20 @@ export default function NeuroTailorLanding() {
             {[
               {
                 icon: <Code className="w-8 h-8" />,
-                title: "Full-Stack Development",
-                description: "Frontend, backend, and database - all generated automatically",
+                title: "Full-Stack разработка",
+                description: "Frontend, backend и база данных - всё генерируется автоматически",
                 gradient: "from-blue-500 to-cyan-400"
               },
               {
                 icon: <Globe className="w-8 h-8" />,
-                title: "Multi-Platform",
-                description: "Web, mobile, Telegram bots, and blockchain dApps",
+                title: "Мультиплатформенность",
+                description: "Веб, мобильные приложения, Telegram-боты и блокчейн dApps",
                 gradient: "from-purple-500 to-pink-500"
               },
               {
                 icon: <Zap className="w-8 h-8" />,
-                title: "Instant Deployment",
-                description: "Your MVP goes live automatically with free hosting",
+                title: "Мгновенный деплой",
+                description: "Ваш MVP автоматически публикуется с бесплатным хостингом",
                 gradient: "from-orange-500 to-red-500"
               }
             ].map((feature, index) => (
@@ -282,10 +282,10 @@ export default function NeuroTailorLanding() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              How It
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> Works</span>
+              Как это
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> работает</span>
             </h2>
-            <p className="text-xl text-gray-300">From idea to live MVP in 3 simple steps</p>
+            <p className="text-xl text-gray-300">От идеи до готового MVP в 3 простых шага</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 relative">
@@ -295,27 +295,27 @@ export default function NeuroTailorLanding() {
             {[
               {
                 step: "01",
-                title: "Describe Your Idea",
-                description: "Tell us about your product vision, target audience, and core features",
+                title: "Опишите вашу идею",
+                description: "Расскажите о вашем видении продукта, целевой аудитории и ключевых функциях",
                 icon: <Brain className="w-8 h-8" />
               },
               {
                 step: "02",
-                title: "AI Builds Your MVP",
-                description: "Our AI agents design, code, and test your application automatically",
+                title: "AI создаёт ваш MVP",
+                description: "Наши AI-агенты проектируют, программируют и тестируют ваше приложение автоматически",
                 icon: <Cpu className="w-8 h-8" />
               },
               {
                 step: "03",
-                title: "Launch & Iterate",
-                description: "Get your live MVP with source code and start collecting user feedback",
+                title: "Запускайте и улучшайте",
+                description: "Получите готовый MVP с исходным кодом и начните собирать обратную связь пользователей",
                 icon: <Rocket className="w-8 h-8" />
               }
             ].map((step, index) => (
               <div key={index} className="relative">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
                   <div className="absolute -top-4 left-8 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-bold px-3 py-1 rounded-full">
-                    STEP {step.step}
+                    ШАГ {step.step}
                   </div>
                   <div className="inline-flex p-3 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl mb-4">
                     {step.icon}
@@ -334,8 +334,8 @@ export default function NeuroTailorLanding() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Build for Any
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> Platform</span>
+              Создавайте для любой
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> платформы</span>
             </h2>
           </div>
 
@@ -351,7 +351,10 @@ export default function NeuroTailorLanding() {
                       : 'bg-white/10 text-gray-300 hover:bg-white/20'
                   }`}
                 >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  {tab === 'web' && 'Веб'}
+                  {tab === 'mobile' && 'Мобильные'}
+                  {tab === 'telegram' && 'Telegram'}
+                  {tab === 'blockchain' && 'Блокчейн'}
                 </button>
               ))}
             </div>
@@ -359,10 +362,10 @@ export default function NeuroTailorLanding() {
             <div className="text-center">
               {activeTab === 'web' && (
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold">Web Applications</h3>
+                  <h3 className="text-2xl font-semibold">Веб-приложения</h3>
                   <p className="text-gray-300 max-w-2xl mx-auto">
-                    Full-stack web apps with React, Next.js, databases, and APIs. 
-                    Perfect for SaaS, marketplaces, and dashboards.
+                    Full-stack веб-приложения с React, Next.js, базами данных и API. 
+                    Идеально для SaaS, маркетплейсов и дашбордов.
                   </p>
                   <div className="flex flex-wrap justify-center gap-3 mt-6">
                     {['React', 'Next.js', 'Node.js', 'PostgreSQL', 'Tailwind CSS'].map((tech) => (
@@ -376,10 +379,10 @@ export default function NeuroTailorLanding() {
 
               {activeTab === 'mobile' && (
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold">Mobile Applications</h3>
+                  <h3 className="text-2xl font-semibold">Мобильные приложения</h3>
                   <p className="text-gray-300 max-w-2xl mx-auto">
-                    Native iOS and Android apps with Flutter. 
-                    Cross-platform development with a single codebase.
+                    Нативные iOS и Android приложения на Flutter. 
+                    Кроссплатформенная разработка с единой кодовой базой.
                   </p>
                   <div className="flex flex-wrap justify-center gap-3 mt-6">
                     {['Flutter', 'Dart', 'iOS', 'Android', 'Firebase'].map((tech) => (
@@ -395,8 +398,8 @@ export default function NeuroTailorLanding() {
                 <div className="space-y-4">
                   <h3 className="text-2xl font-semibold">Telegram Mini Apps</h3>
                   <p className="text-gray-300 max-w-2xl mx-auto">
-                    Interactive Telegram bots and mini-apps. 
-                    Perfect for crypto projects and community tools.
+                    Интерактивные Telegram-боты и мини-приложения. 
+                    Идеально для крипто-проектов и инструментов сообщества.
                   </p>
                   <div className="flex flex-wrap justify-center gap-3 mt-6">
                     {['Telegram API', 'Web App', 'Bot Framework', 'Payments', 'TON'].map((tech) => (
@@ -410,10 +413,10 @@ export default function NeuroTailorLanding() {
 
               {activeTab === 'blockchain' && (
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-semibold">Blockchain dApps</h3>
+                  <h3 className="text-2xl font-semibold">Блокчейн dApps</h3>
                   <p className="text-gray-300 max-w-2xl mx-auto">
-                    Smart contracts and decentralized applications. 
-                    Support for Ethereum, Polygon, BSC, TON, and Solana.
+                    Смарт-контракты и децентрализованные приложения. 
+                    Поддержка Ethereum, Polygon, BSC, TON и Solana.
                   </p>
                   <div className="flex flex-wrap justify-center gap-3 mt-6">
                     {['Solidity', 'Web3.js', 'Ethers.js', 'Smart Contracts', 'DeFi'].map((tech) => (
@@ -434,10 +437,10 @@ export default function NeuroTailorLanding() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Simple, Transparent
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> Pricing</span>
+              Простые и прозрачные
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> тарифы</span>
             </h2>
-            <p className="text-xl text-gray-300">Choose the plan that fits your innovation speed</p>
+            <p className="text-xl text-gray-300">Выберите план, который соответствует вашей скорости инноваций</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -450,7 +453,7 @@ export default function NeuroTailorLanding() {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-sm font-semibold">
-                    MOST POPULAR
+                    САМЫЙ ПОПУЛЯРНЫЙ
                   </div>
                 )}
                 
@@ -479,7 +482,7 @@ export default function NeuroTailorLanding() {
                     ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600'
                     : 'bg-white/10 hover:bg-white/20'
                 }`}>
-                  Get Started
+                  Начать
                 </button>
               </div>
             ))}
@@ -487,9 +490,9 @@ export default function NeuroTailorLanding() {
 
           <div className="mt-12 text-center">
             <p className="text-gray-400">
-              Need more? 
+              Нужно больше? 
               <a href="#" className="text-purple-400 hover:text-purple-300 ml-2">
-                Contact us for custom plans
+                Свяжитесь с нами для индивидуальных планов
               </a>
             </p>
           </div>
@@ -501,8 +504,8 @@ export default function NeuroTailorLanding() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Loved by
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> Innovators</span>
+              Любимый инструмент
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> инноваторов</span>
             </h2>
           </div>
 
@@ -547,17 +550,17 @@ export default function NeuroTailorLanding() {
       <section className="relative py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Build Your
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent"> Next Big Thing?</span>
+            Готовы создать ваш
+            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent"> следующий большой проект?</span>
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Join hundreds of entrepreneurs who are shipping faster with AI
+            Присоединяйтесь к сотням предпринимателей, которые запускают проекты быстрее с помощью AI
           </p>
           <button className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold text-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
-            Start Your Free Trial
+            Начать бесплатный триал
             <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
-          <p className="mt-4 text-gray-400">No credit card required • 24/7 support</p>
+          <p className="mt-4 text-gray-400">Без кредитной карты • Поддержка 24/7</p>
         </div>
       </section>
 
@@ -570,41 +573,41 @@ export default function NeuroTailorLanding() {
                 <Brain className="w-8 h-8 text-purple-500" />
                 <span className="text-xl font-bold">NeuroTailor</span>
               </div>
-              <p className="text-gray-400">AI-powered MVP development platform</p>
+              <p className="text-gray-400">Платформа AI-разработки MVP</p>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Product</h4>
+              <h4 className="font-semibold mb-4">Продукт</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Templates</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Возможности</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Тарифы</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Шаблоны</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">API</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
+              <h4 className="font-semibold mb-4">Компания</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">О нас</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Блог</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Карьера</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Контакты</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
+              <h4 className="font-semibold mb-4">Правовая информация</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Конфиденциальность</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Условия</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Безопасность</a></li>
               </ul>
             </div>
           </div>
           
           <div className="pt-8 border-t border-white/10 text-center text-gray-400">
-            <p>© 2024 NeuroTailor. All rights reserved.</p>
+            <p>© 2024 NeuroTailor. Все права защищены.</p>
           </div>
         </div>
       </footer>
