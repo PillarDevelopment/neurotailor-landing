@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, Code, Zap, Shield, Users, Star, ArrowRight, Play, Check, X, Menu, Sparkles, Cpu, Clock, DollarSign, Rocket, GitBranch, Globe, BarChart, Brain } from 'lucide-react';
+import { trackCTAClick, trackPricingSelect, trackPlatformView, trackMobileMenuToggle } from '@/lib/analytics';
 
 export default function NeuroTailorLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,6 +24,19 @@ export default function NeuroTailorLanding() {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  // Track mobile menu toggle
+  const handleMobileMenuToggle = () => {
+    const newState = !isMenuOpen;
+    setIsMenuOpen(newState);
+    trackMobileMenuToggle(newState);
+  };
+
+  // Track platform tab change
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+    trackPlatformView(tab);
+  };
 
   const pricingPlans = [
     {
@@ -142,12 +156,15 @@ export default function NeuroTailorLanding() {
               <a href="#how-it-works" className="hover:text-purple-400 transition-colors">Как это работает</a>
               <a href="#pricing" className="hover:text-purple-400 transition-colors">Тарифы</a>
               <a href="#testimonials" className="hover:text-purple-400 transition-colors">Отзывы</a>
-              <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105">
+              <button 
+                onClick={() => trackCTAClick('header_start_building')}
+                className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105"
+              >
                 Начать создавать
               </button>
             </div>
 
-            <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button className="md:hidden" onClick={handleMobileMenuToggle}>
               <Menu className="w-6 h-6" />
             </button>
           </div>
@@ -161,7 +178,10 @@ export default function NeuroTailorLanding() {
               <a href="#how-it-works" className="block hover:text-purple-400 transition-colors">Как это работает</a>
               <a href="#pricing" className="block hover:text-purple-400 transition-colors">Тарифы</a>
               <a href="#testimonials" className="block hover:text-purple-400 transition-colors">Отзывы</a>
-              <button className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg">
+              <button 
+                onClick={() => trackCTAClick('mobile_menu_start_building')}
+                className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg"
+              >
                 Начать создавать
               </button>
             </div>
@@ -190,11 +210,17 @@ export default function NeuroTailorLanding() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold text-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
+            <button 
+              onClick={() => trackCTAClick('hero_start_now')}
+              className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold text-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30"
+            >
               Начать создавать сейчас
               <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all">
+            <button 
+              onClick={() => trackCTAClick('hero_watch_demo')}
+              className="group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all"
+            >
               <Play className="inline-block mr-2 w-5 h-5" />
               Смотреть демо
             </button>
@@ -344,7 +370,7 @@ export default function NeuroTailorLanding() {
               {['web', 'mobile', 'telegram', 'blockchain'].map((tab) => (
                 <button
                   key={tab}
-                  onClick={() => setActiveTab(tab)}
+                  onClick={() => handleTabChange(tab)}
                   className={`px-6 py-3 rounded-lg font-medium transition-all ${
                     activeTab === tab
                       ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
@@ -477,11 +503,14 @@ export default function NeuroTailorLanding() {
                   ))}
                 </ul>
 
-                <button className={`w-full py-3 rounded-lg font-semibold transition-all ${
-                  plan.popular
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600'
-                    : 'bg-white/10 hover:bg-white/20'
-                }`}>
+                <button 
+                  onClick={() => trackPricingSelect(plan.name)}
+                  className={`w-full py-3 rounded-lg font-semibold transition-all ${
+                    plan.popular
+                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600'
+                      : 'bg-white/10 hover:bg-white/20'
+                  }`}
+                >
                   Начать
                 </button>
               </div>
@@ -491,7 +520,11 @@ export default function NeuroTailorLanding() {
           <div className="mt-12 text-center">
             <p className="text-gray-400">
               Нужно больше? 
-              <a href="#" className="text-purple-400 hover:text-purple-300 ml-2">
+              <a 
+                href="#" 
+                onClick={() => trackCTAClick('contact_custom_plans')}
+                className="text-purple-400 hover:text-purple-300 ml-2"
+              >
                 Свяжитесь с нами для индивидуальных планов
               </a>
             </p>
@@ -556,7 +589,10 @@ export default function NeuroTailorLanding() {
           <p className="text-xl text-gray-300 mb-8">
             Присоединяйтесь к сотням предпринимателей, которые запускают проекты быстрее с помощью AI
           </p>
-          <button className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold text-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
+          <button 
+            onClick={() => trackCTAClick('footer_start_trial')}
+            className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold text-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30"
+          >
             Начать бесплатный триал
             <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
