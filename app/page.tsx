@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronRight, Code, Zap, Shield, Users, Star, ArrowRight, Play, Check, X, Menu, Sparkles, Cpu, Clock, DollarSign, Rocket, GitBranch, Globe, BarChart, Brain } from 'lucide-react';
+import { ChevronRight, Code, Zap, Shield, Users, Star, ArrowRight, Play, Check, X, Menu, Sparkles, Cpu, Clock, RussianRuble, Rocket, GitBranch, Globe, BarChart, Brain } from 'lucide-react';
 import { trackCTAClick, trackPricingSelect, trackPlatformView, trackMobileMenuToggle } from '@/lib/analytics';
 import ApplicationModal from '@/components/Modal/ApplicationModal';
 
@@ -131,7 +131,7 @@ export default function NeuroTailorLanding() {
     { number: "500+", label: "Созданных MVP", icon: <Rocket className="w-6 h-6" /> },
     { number: "24ч", label: "Средняя доставка", icon: <Clock className="w-6 h-6" /> },
     { number: "94%", label: "Успешность", icon: <BarChart className="w-6 h-6" /> },
-    { number: "₽18,700", label: "Стоимость за MVP", icon: <DollarSign className="w-6 h-6" /> }
+    { number: "99,900", label: "Стоимость за MVP", icon: <RussianRuble className="w-6 h-6" /> }
   ];
 
   return (

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "NeuroTailor - AI-разработка MVP за 24 часа",
     description: "Создайте MVP вашего стартапа за 24 часа с помощью AI-агентов",
     type: "website",
-    url: "https://neurotailor.ru",
+    url: "https://8sh.ru",
     locale: "ru_RU",
     images: [
       {

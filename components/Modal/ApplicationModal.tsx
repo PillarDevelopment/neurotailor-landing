@@ -12,8 +12,6 @@ interface ApplicationModalProps {
 export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }: ApplicationModalProps) {
   const [formData, setFormData] = useState({
     firstName: '',
-    lastName: '',
-    company: '',
     email: '',
     telegram: '',
     mvpDescription: ''
@@ -68,8 +66,6 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }
         setTimeout(() => {
           setFormData({
             firstName: '',
-            lastName: '',
-            company: '',
             email: '',
             telegram: '',
             mvpDescription: ''
@@ -138,37 +134,6 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }
                 placeholder="Иван"
               />
             </div>
-            
-            <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-1">
-                Фамилия *
-              </label>
-              <input
-                type="text"
-                id="lastName"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all"
-                placeholder="Иванов"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-1">
-              Компания
-            </label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all"
-              placeholder="Название вашей компании"
-            />
           </div>
 
           <div>
@@ -189,7 +154,7 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }
 
           <div>
             <label htmlFor="telegram" className="block text-sm font-medium text-gray-300 mb-1">
-              Telegram *
+              Telegram
             </label>
             <input
               type="text"
@@ -197,7 +162,6 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }
               name="telegram"
               value={formData.telegram}
               onChange={handleChange}
-              required
               className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all"
               placeholder="@username"
             />
@@ -205,14 +169,13 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }
 
           <div>
             <label htmlFor="mvpDescription" className="block text-sm font-medium text-gray-300 mb-1">
-              Описание твоего MVP *
+              Описание твоего MVP
             </label>
             <textarea
               id="mvpDescription"
               name="mvpDescription"
               value={formData.mvpDescription}
               onChange={handleChange}
-              required
               rows={4}
               className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all resize-none"
               placeholder="Расскажите о вашей идее: что это за продукт, какие проблемы он решает, для кого предназначен..."
