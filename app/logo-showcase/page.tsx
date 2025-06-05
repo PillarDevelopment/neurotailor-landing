@@ -39,7 +39,13 @@ export default function LogoShowcase() {
     alert(`Для скачивания SVG скопируйте код из компонента Logo.tsx для варианта "${variant}"`);
   };
 
-  const variants = [
+  const variants: Array<{
+    name: string;
+    description: string;
+    component: React.ReactNode;
+    variant: 'default' | 'minimal' | 'icon' | 'horizontal';
+    usage: string;
+  }> = [
     {
       name: 'Основной логотип',
       description: 'Полная версия с иконкой мозга, нейронными связями и текстом',
