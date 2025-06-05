@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, Code, Zap, Shield, Users, Star, ArrowRight, Play, Check, X, Menu, Sparkles, Cpu, Clock, DollarSign, Rocket, GitBranch, Globe, BarChart, Brain } from 'lucide-react';
 import { trackCTAClick, trackPricingSelect, trackPlatformView, trackMobileMenuToggle } from '@/lib/analytics';
+import ApplicationModal from '@/components/Modal/ApplicationModal';
 
 export default function NeuroTailorLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,6 +11,8 @@ export default function NeuroTailorLanding() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalSource, setModalSource] = useState('unknown');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -36,6 +39,20 @@ export default function NeuroTailorLanding() {
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
     trackPlatformView(tab);
+  };
+
+  // Handle CTA click with modal
+  const handleCTAClick = (source: string) => {
+    trackCTAClick(source);
+    setModalSource(source);
+    setIsModalOpen(true);
+  };
+
+  // Handle pricing plan selection
+  const handlePricingClick = (planName: string) => {
+    trackPricingSelect(planName);
+    setModalSource(`pricing_${planName.toLowerCase()}`);
+    setIsModalOpen(true);
   };
 
   const pricingPlans = [
@@ -157,7 +174,7 @@ export default function NeuroTailorLanding() {
               <a href="#pricing" className="hover:text-purple-400 transition-colors">Тарифы</a>
               <a href="#testimonials" className="hover:text-purple-400 transition-colors">Отзывы</a>
               <button 
-                onClick={() => trackCTAClick('header_start_building')}
+                onClick={() => handleCTAClick('header_start_building')}
                 className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105"
               >
                 Начать создавать
@@ -179,7 +196,7 @@ export default function NeuroTailorLanding() {
               <a href="#pricing" className="block hover:text-purple-400 transition-colors">Тарифы</a>
               <a href="#testimonials" className="block hover:text-purple-400 transition-colors">Отзывы</a>
               <button 
-                onClick={() => trackCTAClick('mobile_menu_start_building')}
+                onClick={() => handleCTAClick('mobile_menu_start_building')}
                 className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg"
               >
                 Начать создавать
@@ -211,7 +228,7 @@ export default function NeuroTailorLanding() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button 
-              onClick={() => trackCTAClick('hero_start_now')}
+              onClick={() => handleCTAClick('hero_start_now')}
               className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold text-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30"
             >
               Начать создавать сейчас
@@ -504,7 +521,7 @@ export default function NeuroTailorLanding() {
                 </ul>
 
                 <button 
-                  onClick={() => trackPricingSelect(plan.name)}
+                  onClick={() => handlePricingClick(plan.name)}
                   className={`w-full py-3 rounded-lg font-semibold transition-all ${
                     plan.popular
                       ? 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600'
@@ -590,7 +607,7 @@ export default function NeuroTailorLanding() {
             Присоединяйтесь к сотням предпринимателей, которые запускают проекты быстрее с помощью AI
           </p>
           <button 
-            onClick={() => trackCTAClick('footer_start_trial')}
+            onClick={() => handleCTAClick('footer_start_trial')}
             className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold text-lg hover:from-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30"
           >
             Начать бесплатный триал
@@ -677,6 +694,13 @@ export default function NeuroTailorLanding() {
           animation: gradient 5s ease infinite;
         }
       `}</style>
+
+      {/* Application Modal */}
+      <ApplicationModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        source={modalSource}
+      />
     </div>
   );
 }
