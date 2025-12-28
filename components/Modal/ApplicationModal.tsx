@@ -152,7 +152,7 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown', 
         <div className="mb-6">
           <h3 className="text-2xl font-bold mb-2">
             {translations.title}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> RouterAI</span>
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> Tech Catalyst</span>
           </h3>
           <p className="text-gray-400">
             {translations.subtitle}

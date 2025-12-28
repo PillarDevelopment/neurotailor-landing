@@ -6,28 +6,28 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://routerai.ru'),
-  title: "RouterAI - Unified API for 100+ AI Models",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://techcatalyst.ru'),
+  title: "Tech Catalyst - Unified API for 100+ AI Models",
   description: "ChatGPT, Claude, Gemini, Grok and hundreds of other AI models in one API. Pay in rubles. Works without VPN. Single API key, single endpoint.",
   keywords: "AI API, ChatGPT API, Claude API, Gemini API, AI models, unified API, OpenAI alternative, AI aggregation, pay as you go, Russian AI API",
   openGraph: {
-    title: "RouterAI - Unified API for 100+ AI Models",
+    title: "Tech Catalyst - Unified API for 100+ AI Models",
     description: "ChatGPT, Claude, Gemini, Grok and hundreds of other AI models in one API. Pay in rubles. Works without VPN.",
     type: "website",
-    url: "https://routerai.ru",
+    url: "https://techcatalyst.ru",
     locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "RouterAI - Unified API Platform for AI Models",
+        alt: "Tech Catalyst - Unified API Platform for AI Models",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "RouterAI - Unified API for 100+ AI Models",
+    title: "Tech Catalyst - Unified API for 100+ AI Models",
     description: "ChatGPT, Claude, Gemini, Grok and hundreds of other AI models in one API",
     images: ["/og-image.png"],
   },

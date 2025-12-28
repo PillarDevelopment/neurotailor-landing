@@ -5,7 +5,7 @@ import { ChevronRight, Code, Zap, Shield, Users, Star, ArrowRight, Play, Check, 
 import { trackCTAClick, trackPricingSelect, trackPlatformView, trackMobileMenuToggle } from '@/lib/analytics';
 import ApplicationModal from '@/components/Modal/ApplicationModal';
 
-export default function RouterAILanding() {
+export default function TechCatalystLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('all');
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -17,7 +17,7 @@ export default function RouterAILanding() {
 
   // Load language from localStorage on mount
   useEffect(() => {
-    const savedLang = localStorage.getItem('routerai_lang') as 'en' | 'ru' | null;
+    const savedLang = localStorage.getItem('techcatalyst_lang') as 'en' | 'ru' | null;
     if (savedLang === 'en' || savedLang === 'ru') {
       setLanguage(savedLang);
     }
@@ -25,7 +25,7 @@ export default function RouterAILanding() {
 
   // Save language to localStorage when it changes
   useEffect(() => {
-    localStorage.setItem('routerai_lang', language);
+    localStorage.setItem('techcatalyst_lang', language);
   }, [language]);
 
   useEffect(() => {
@@ -193,13 +193,13 @@ export default function RouterAILanding() {
       testimonials: {
         title: "Trusted by",
         titleHighlight: "developers",
-        subtitle: "See what our users say about RouterAI",
+        subtitle: "See what our users say about Tech Catalyst",
         startFree: "Start Free"
       },
       cta: {
         title: "Ready to start building with",
-        titleHighlight: "RouterAI?",
-        subtitle: "Join hundreds of developers and companies using RouterAI to access 100+ AI models with one API",
+        titleHighlight: "Tech Catalyst?",
+        subtitle: "Join hundreds of developers and companies using Tech Catalyst to access 100+ AI models with one API",
         startFree: "Start Free",
         noCard: "No credit card required • 24/7 Support"
       },
@@ -208,7 +208,7 @@ export default function RouterAILanding() {
         product: "Product",
         company: "Company",
         legal: "Legal",
-        copyright: "© 2025 RouterAI. All rights reserved."
+        copyright: "© 2025 Tech Catalyst. All rights reserved."
       }
     },
     ru: {
@@ -333,13 +333,13 @@ export default function RouterAILanding() {
       testimonials: {
         title: "Нам доверяют",
         titleHighlight: "разработчики",
-        subtitle: "Посмотрите, что говорят наши пользователи о RouterAI",
+        subtitle: "Посмотрите, что говорят наши пользователи о Tech Catalyst",
         startFree: "Начать бесплатно"
       },
       cta: {
         title: "Готовы начать работу с",
-        titleHighlight: "RouterAI?",
-        subtitle: "Присоединяйтесь к сотням разработчиков и компаний, использующих RouterAI для доступа к 100+ моделям ИИ через один API",
+        titleHighlight: "Tech Catalyst?",
+        subtitle: "Присоединяйтесь к сотням разработчиков и компаний, использующих Tech Catalyst для доступа к 100+ моделям ИИ через один API",
         startFree: "Начать бесплатно",
         noCard: "Без кредитной карты • Поддержка 24/7"
       },
@@ -348,7 +348,7 @@ export default function RouterAILanding() {
         product: "Продукт",
         company: "Компания",
         legal: "Правовая информация",
-        copyright: "© 2025 RouterAI. Все права защищены."
+        copyright: "© 2025 Tech Catalyst. Все права защищены."
       }
     }
   };
@@ -391,24 +391,24 @@ export default function RouterAILanding() {
       name: "Alex Petrov",
       role: language === 'ru' ? "CTO, TechStart" : "CTO, TechStart",
       content: language === 'ru' 
-        ? "RouterAI сэкономил нам недели разработки. Я могу тестировать гипотезы с разными моделями, просто меняя одну строчку в конфиге. Автоматическая отказоустойчивость — это спасение."
-        : "RouterAI saved us weeks of development time. I can test hypotheses with different models just by changing one line in the config. The automatic failover is a lifesaver.",
+        ? "Tech Catalyst сэкономил нам недели разработки. Я могу тестировать гипотезы с разными моделями, просто меняя одну строчку в конфиге. Автоматическая отказоустойчивость — это спасение."
+        : "Tech Catalyst saved us weeks of development time. I can test hypotheses with different models just by changing one line in the config. The automatic failover is a lifesaver.",
       avatar: "👨‍💻"
     },
     {
       name: "Maria Ivanova",
       role: language === 'ru' ? "Ведущий разработчик, StartupHub" : "Lead Developer, StartupHub",
       content: language === 'ru'
-        ? "Переход на RouterAI сэкономил нам недели разработки. Один ключ, один эндпоинт, максимальная простота. Оплата в рублях без посредников — именно то, что нам нужно."
-        : "Switching to RouterAI saved us weeks of development. One key, one endpoint, maximum simplicity. Payment in rubles without intermediaries is exactly what we needed.",
+        ? "Переход на Tech Catalyst сэкономил нам недели разработки. Один ключ, один эндпоинт, максимальная простота. Оплата в рублях без посредников — именно то, что нам нужно."
+        : "Switching to Tech Catalyst saved us weeks of development. One key, one endpoint, maximum simplicity. Payment in rubles without intermediaries is exactly what we needed.",
       avatar: "👩‍💼"
     },
     {
       name: "Dmitry Sokolov",
       role: language === 'ru' ? "Основатель, Indie Dev" : "Founder, Indie Dev",
       content: language === 'ru'
-        ? "Главное для нас — возможность работать с юрлицами и получать закрывающие документы. RouterAI решил все наши проблемы с соответствием ФЗ-152."
-        : "The main thing for us is the ability to work with legal entities and receive closing documents. RouterAI solved all our compliance issues with FZ-152.",
+        ? "Главное для нас — возможность работать с юрлицами и получать закрывающие документы. Tech Catalyst решил все наши проблемы с соответствием ФЗ-152."
+        : "The main thing for us is the ability to work with legal entities and receive closing documents. Tech Catalyst solved all our compliance issues with FZ-152.",
       avatar: "👨‍💼"
     }
   ];
@@ -461,7 +461,7 @@ export default function RouterAILanding() {
             <div className="flex items-center space-x-2">
               <Layers className="w-8 h-8 text-purple-500" />
               <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                RouterAI
+                Tech Catalyst
               </span>
             </div>
             
@@ -736,8 +736,8 @@ export default function RouterAILanding() {
 {`from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://routerai.ru/api/v1",
-    api_key="your-routerai-key"
+    base_url="https://techcatalyst.ru/api/v1",
+    api_key="your-techcatalyst-key"
 )
 
 response = client.chat.completions.create(
@@ -1038,7 +1038,7 @@ response = client.chat.completions.create(
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Layers className="w-8 h-8 text-purple-500" />
-                <span className="text-xl font-bold">RouterAI</span>
+                <span className="text-xl font-bold">Tech Catalyst</span>
               </div>
               <p className="text-gray-400">{translations.footer.tagline}</p>
             </div>

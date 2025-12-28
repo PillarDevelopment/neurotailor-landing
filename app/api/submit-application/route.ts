@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
 
     // Format Telegram message
     const message = `
-🚀 <b>New RouterAI Application</b>
+🚀 <b>New Tech Catalyst Application</b>
 
 👤 <b>Name:</b> ${escapeHtml(data.firstName)}
 📧 <b>Email:</b> ${escapeHtml(data.email)}
