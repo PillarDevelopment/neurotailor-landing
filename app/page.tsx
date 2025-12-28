@@ -83,7 +83,7 @@ export default function TechCatalystLanding() {
         badge: "Unified AI API Platform",
         title: "ChatGPT, Claude, Gemini, Grok",
         titleHighlight: "and 100+ AI models in one API",
-        description: "Single API key, single endpoint. Pay in rubles. Works without VPN. Switch between models by changing one parameter. Automatic failover included.",
+        description: "Single API key, single endpoint. Works without VPN. Switch between models by changing one parameter. Automatic failover included.",
         startFree: "Start Free",
         exploreDocs: "Explore Documentation"
       },
@@ -91,12 +91,12 @@ export default function TechCatalystLanding() {
         models: "AI Models",
         providers: "Providers",
         uptime: "Uptime",
-        payRubles: "Pay in Rubles"
+        payRubles: "Pay-as-you-go"
       },
       features: {
         title: "Everything you need in",
         titleHighlight: "one platform",
-        subtitle: "Single API, multiple models. Pay in rubles. Works without VPN. Built for developers and teams.",
+        subtitle: "Single API, multiple models. Works without VPN. Built for developers and teams.",
         unifiedApi: {
           title: "Unified API",
           desc: "One API key, one endpoint. Compatible with OpenAI SDK. Switch models by changing one parameter."
@@ -107,19 +107,19 @@ export default function TechCatalystLanding() {
         },
         noVpn: {
           title: "No VPN Required",
-          desc: "Direct access without VPN through infrastructure in Russia. Stable and fast connection."
+          desc: "Direct access without VPN. Stable and fast connection with global infrastructure."
         },
         payRubles: {
-          title: "Pay in Rubles",
-          desc: "Payment via Russian bank cards, SBP. No foreign intermediaries. Transparent pay-as-you-go pricing."
+          title: "Flexible Payment",
+          desc: "Multiple payment methods available. Transparent pay-as-you-go pricing. No hidden fees."
         },
         team: {
           title: "Team Collaboration",
           desc: "Centralized billing, individual limits, role management. Perfect for corporate clients."
         },
         compliance: {
-          title: "FZ-152 Compliant",
-          desc: "Models hosted on servers in Russia. Legal transparency with contracts and EDI for legal entities."
+          title: "Enterprise Ready",
+          desc: "Legal transparency with contracts and EDI for legal entities. Secure and compliant infrastructure."
         }
       },
       api: {
@@ -173,8 +173,8 @@ export default function TechCatalystLanding() {
         subtitle: "Pay-as-you-go. No subscriptions. No hidden fees.",
         individuals: {
           title: "For Individuals",
-          card: "Russian bank cards",
-          sbp: "SBP (Fast Payment System)",
+          card: "Credit and debit cards",
+          sbp: "Multiple payment methods",
           instant: "Instant top-up",
           noMin: "No minimum payment"
         },
@@ -359,28 +359,28 @@ export default function TechCatalystLanding() {
     {
       name: 'GPT-5.2',
       provider: 'OpenAI',
-      price: '₽176 / ₽1,414',
+      price: language === 'ru' ? '₽176 / ₽1,414' : '$2.00 / $16.00',
       context: '128K tokens',
       description: language === 'ru' ? 'Последняя модель GPT с улучшенным рассуждением' : 'Latest GPT model with enhanced reasoning'
     },
     {
       name: 'Claude Sonnet 4.5',
       provider: 'Anthropic',
-      price: '₽303 / ₽1,515',
+      price: language === 'ru' ? '₽303 / ₽1,515' : '$3.50 / $17.50',
       context: '200K tokens',
       description: language === 'ru' ? 'Лучшая для сложных рассуждений и анализа' : 'Best for complex reasoning and analysis'
     },
     {
       name: 'DeepSeek V3.2',
       provider: 'DeepSeek',
-      price: '₽56 / ₽169',
+      price: language === 'ru' ? '₽56 / ₽169' : '$0.65 / $2.00',
       context: '64K tokens',
       description: language === 'ru' ? 'Самая экономичная топовая модель' : 'Most cost-effective top-tier model'
     },
     {
       name: 'Gemini 3 Flash',
       provider: 'Google',
-      price: '₽50 / ₽303',
+      price: language === 'ru' ? '₽50 / ₽303' : '$0.60 / $3.50',
       context: '1M tokens',
       description: language === 'ru' ? 'Быстрая и доступная для больших объемов задач' : 'Fast and affordable for high-volume tasks'
     }
@@ -400,7 +400,7 @@ export default function TechCatalystLanding() {
       role: language === 'ru' ? "Ведущий разработчик, StartupHub" : "Lead Developer, StartupHub",
       content: language === 'ru'
         ? "Переход на Tech Catalyst сэкономил нам недели разработки. Один ключ, один эндпоинт, максимальная простота. Оплата в рублях без посредников — именно то, что нам нужно."
-        : "Switching to Tech Catalyst saved us weeks of development. One key, one endpoint, maximum simplicity. Payment in rubles without intermediaries is exactly what we needed.",
+        : "Switching to Tech Catalyst saved us weeks of development. One key, one endpoint, maximum simplicity. Simple payment process without intermediaries is exactly what we needed.",
       avatar: "👩‍💼"
     },
     {
@@ -408,7 +408,7 @@ export default function TechCatalystLanding() {
       role: language === 'ru' ? "Основатель, Indie Dev" : "Founder, Indie Dev",
       content: language === 'ru'
         ? "Главное для нас — возможность работать с юрлицами и получать закрывающие документы. Tech Catalyst решил все наши проблемы с соответствием ФЗ-152."
-        : "The main thing for us is the ability to work with legal entities and receive closing documents. Tech Catalyst solved all our compliance issues with FZ-152.",
+        : "The main thing for us is the ability to work with legal entities and receive closing documents. Tech Catalyst solved all our compliance and legal requirements.",
       avatar: "👨‍💼"
     }
   ];
@@ -417,7 +417,7 @@ export default function TechCatalystLanding() {
     { number: "100+", label: translations.stats.models, icon: <Brain className="w-6 h-6" /> },
     { number: "55", label: translations.stats.providers, icon: <Layers className="w-6 h-6" /> },
     { number: "99.9%", label: translations.stats.uptime, icon: <Server className="w-6 h-6" /> },
-    { number: "₽", label: translations.stats.payRubles, icon: <RussianRuble className="w-6 h-6" /> }
+    { number: language === 'ru' ? "₽" : "$", label: translations.stats.payRubles, icon: language === 'ru' ? <RussianRuble className="w-6 h-6" /> : <CreditCard className="w-6 h-6" /> }
   ];
 
   // Generate stable random positions for background particles
