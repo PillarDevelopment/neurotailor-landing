@@ -6,28 +6,29 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
-  title: "NeuroTailor - AI-разработка MVP за 24 часа",
-  description: "Создайте MVP вашего стартапа за 24 часа с помощью AI-агентов. Без программирования. От идеи до готового продукта для инвесторов за дни, а не месяцы.",
-  keywords: "MVP разработка, AI разработка, стартап инструменты, no-code, AI агенты, быстрое прототипирование, создание MVP, искусственный интеллект",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://routerai.ru'),
+  title: "RouterAI - Unified API for 100+ AI Models",
+  description: "ChatGPT, Claude, Gemini, Grok and hundreds of other AI models in one API. Pay in rubles. Works without VPN. Single API key, single endpoint.",
+  keywords: "AI API, ChatGPT API, Claude API, Gemini API, AI models, unified API, OpenAI alternative, AI aggregation, pay as you go, Russian AI API",
   openGraph: {
-    title: "NeuroTailor - AI-разработка MVP за 24 часа",
-    description: "Создайте MVP вашего стартапа за 24 часа с помощью AI-агентов",
+    title: "RouterAI - Unified API for 100+ AI Models",
+    description: "ChatGPT, Claude, Gemini, Grok and hundreds of other AI models in one API. Pay in rubles. Works without VPN.",
     type: "website",
-    url: "https://8sh.ru",
-    locale: "ru_RU",
+    url: "https://routerai.ru",
+    locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "NeuroTailor - Платформа AI разработки MVP",
+        alt: "RouterAI - Unified API Platform for AI Models",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NeuroTailor - AI-разработка MVP за 24 часа",
-    description: "Создайте MVP вашего стартапа за 24 часа с помощью AI-агентов",
+    title: "RouterAI - Unified API for 100+ AI Models",
+    description: "ChatGPT, Claude, Gemini, Grok and hundreds of other AI models in one API",
     images: ["/og-image.png"],
   },
 };
@@ -41,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} antialiased`}>
         {children}
         

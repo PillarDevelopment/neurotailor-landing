@@ -13,27 +13,27 @@ export async function POST(request: NextRequest) {
   try {
     const data: ApplicationData = await request.json();
 
-    // Проверка обязательных полей
-    if (!data.firstName  || !data.email || !data.telegram || !data.mvpDescription) {
+    // Validate required fields
+    if (!data.firstName || !data.email) {
       return NextResponse.json(
-        { error: 'Пожалуйста, заполните все обязательные поля' },
+        { error: 'Please fill in all required fields' },
         { status: 400 }
       );
     }
 
-    // Форматирование сообщения для Telegram
+    // Format Telegram message
     const message = `
-🚀 <b>Новая заявка с NeuroTailor</b>
+🚀 <b>New RouterAI Application</b>
 
-👤 <b>Имя:</b> ${escapeHtml(data.firstName)}
+👤 <b>Name:</b> ${escapeHtml(data.firstName)}
 📧 <b>Email:</b> ${escapeHtml(data.email)}
-💬 <b>Telegram:</b> ${escapeHtml(data.telegram)}
-📍 <b>Источник:</b> ${escapeHtml(data.source)}
+💬 <b>Telegram:</b> ${escapeHtml(data.telegram || 'Not provided')}
+📍 <b>Source:</b> ${escapeHtml(data.source)}
 
-📝 <b>Описание MVP:</b>
+📝 <b>Use Case:</b>
 ${escapeHtml(data.mvpDescription)}
 
-⏰ <b>Время:</b> ${new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' })}
+⏰ <b>Time:</b> ${new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' })}
 `.trim();
 
     // Получение данных телеграм бота из переменных окружения
@@ -42,9 +42,9 @@ ${escapeHtml(data.mvpDescription)}
 
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
       console.error('Telegram bot credentials not configured');
-      // Возвращаем успех для пользователя, но логируем ошибку
+      // Return success to user but log error
       return NextResponse.json(
-        { success: true, message: 'Заявка принята' },
+        { success: true, message: 'Application received' },
         { status: 200 }
       );
     }
@@ -68,21 +68,21 @@ ${escapeHtml(data.mvpDescription)}
 
     if (!telegramResponse.ok) {
       console.error('Telegram API error:', telegramData);
-      // Все равно возвращаем успех для пользователя
+      // Still return success to user
       return NextResponse.json(
-        { success: true, message: 'Заявка принята' },
+        { success: true, message: 'Application received' },
         { status: 200 }
       );
     }
 
     return NextResponse.json(
-      { success: true, message: 'Заявка успешно отправлена' },
+      { success: true, message: 'Application submitted successfully' },
       { status: 200 }
     );
   } catch (error) {
     console.error('Error submitting application:', error);
     return NextResponse.json(
-      { error: 'Произошла ошибка при отправке заявки' },
+      { error: 'An error occurred while submitting the application' },
       { status: 500 }
     );
   }

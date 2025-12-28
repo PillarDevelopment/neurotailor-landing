@@ -7,9 +7,52 @@ interface ApplicationModalProps {
   isOpen: boolean;
   onClose: () => void;
   source?: string;
+  language?: 'en' | 'ru';
 }
 
-export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }: ApplicationModalProps) {
+export default function ApplicationModal({ isOpen, onClose, source = 'unknown', language = 'en' }: ApplicationModalProps) {
+  const t = {
+    en: {
+      title: "Get started with",
+      subtitle: "Create your free account and start using 100+ AI models with one API key",
+      name: "Name *",
+      email: "Email *",
+      telegram: "Telegram (optional)",
+      useCase: "Tell us about your use case",
+      placeholder: {
+        name: "John",
+        email: "john@example.com",
+        telegram: "@username",
+        useCase: "What are you planning to build? What AI models are you interested in? Any specific requirements?"
+      },
+      submitting: "Submitting...",
+      submit: "Create Free Account",
+      success: "✅ Application submitted successfully! We'll contact you soon.",
+      error: "❌ An error occurred. Please try again.",
+      agreement: "By clicking the button, you agree to our Terms of Service and Privacy Policy"
+    },
+    ru: {
+      title: "Начните работу с",
+      subtitle: "Создайте бесплатный аккаунт и начните использовать 100+ моделей ИИ с одним API-ключом",
+      name: "Имя *",
+      email: "Email *",
+      telegram: "Telegram (необязательно)",
+      useCase: "Расскажите о вашем случае использования",
+      placeholder: {
+        name: "Иван",
+        email: "ivan@example.com",
+        telegram: "@username",
+        useCase: "Что вы планируете создать? Какие модели ИИ вас интересуют? Есть ли особые требования?"
+      },
+      submitting: "Отправка...",
+      submit: "Создать бесплатный аккаунт",
+      success: "✅ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.",
+      error: "❌ Произошла ошибка. Пожалуйста, попробуйте еще раз.",
+      agreement: "Нажимая кнопку, вы соглашаетесь с нашими Условиями использования и Политикой конфиденциальности"
+    }
+  };
+
+  const translations = t[language];
   const [formData, setFormData] = useState({
     firstName: '',
     email: '',
@@ -108,11 +151,11 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }
         {/* Header */}
         <div className="mb-6">
           <h3 className="text-2xl font-bold mb-2">
-            Начните создавать с
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> NeuroTailor</span>
+            {translations.title}
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"> RouterAI</span>
           </h3>
           <p className="text-gray-400">
-            Расскажите о вашей идее, и мы поможем воплотить её в жизнь
+            {translations.subtitle}
           </p>
         </div>
 
@@ -121,7 +164,7 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-1">
-                Имя *
+                {translations.name}
               </label>
               <input
                 type="text"
@@ -131,14 +174,14 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all"
-                placeholder="Иван"
+                placeholder={translations.placeholder.name}
               />
             </div>
           </div>
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-              Email *
+              {translations.email}
             </label>
             <input
               type="email"
@@ -148,13 +191,13 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }
               onChange={handleChange}
               required
               className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all"
-              placeholder="ivan@example.com"
+              placeholder={translations.placeholder.email}
             />
           </div>
 
           <div>
             <label htmlFor="telegram" className="block text-sm font-medium text-gray-300 mb-1">
-              Telegram
+              {translations.telegram}
             </label>
             <input
               type="text"
@@ -163,13 +206,13 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }
               value={formData.telegram}
               onChange={handleChange}
               className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all"
-              placeholder="@username"
+              placeholder={translations.placeholder.telegram}
             />
           </div>
 
           <div>
             <label htmlFor="mvpDescription" className="block text-sm font-medium text-gray-300 mb-1">
-              Описание твоего MVP
+              {translations.useCase}
             </label>
             <textarea
               id="mvpDescription"
@@ -178,20 +221,20 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }
               onChange={handleChange}
               rows={4}
               className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all resize-none"
-              placeholder="Расскажите о вашей идее: что это за продукт, какие проблемы он решает, для кого предназначен..."
+              placeholder={translations.placeholder.useCase}
             />
           </div>
 
           {/* Status messages */}
           {submitStatus === 'success' && (
             <div className="p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-green-300">
-              ✅ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.
+              {translations.success}
             </div>
           )}
 
           {submitStatus === 'error' && (
             <div className="p-4 bg-red-500/20 border border-red-500/30 rounded-lg text-red-300">
-              ❌ Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.
+              {translations.error}
             </div>
           )}
 
@@ -205,11 +248,11 @@ export default function ApplicationModal({ isOpen, onClose, source = 'unknown' }
                 : 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transform hover:scale-105'
             }`}
           >
-            {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
+            {isSubmitting ? translations.submitting : translations.submit}
           </button>
 
           <p className="text-xs text-gray-400 text-center">
-            Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных
+            {translations.agreement}
           </p>
         </form>
       </div>
