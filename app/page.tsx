@@ -356,35 +356,56 @@ export default function TechCatalystLanding() {
   };
 
   const translations = t[language];
+  const USD_TO_RUB = 80;
+  const priceListLabel = language === 'ru' ? 'Прайс-лист: ' : 'Price list: ';
+  const formatUsd = (value: number) => `$${value.toFixed(2)}`;
+  const formatRub = (value: number) => {
+    const [whole, fraction] = value.toFixed(2).split('.');
+    const spaced = whole.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    return `₽${spaced}.${fraction}`;
+  };
+  const formatPrice = (input: number, output: number) => (
+    language === 'ru'
+      ? `${formatRub(input * USD_TO_RUB)} / ${formatRub(output * USD_TO_RUB)}`
+      : `${formatUsd(input)} / ${formatUsd(output)}`
+  );
 
   const models = [
     {
       name: 'GPT-5.2',
       provider: 'OpenAI',
-      price: '$2.63 / $21.00',
+      price: formatPrice(2.63, 21.0),
       context: '128K tokens',
-      description: language === 'ru' ? 'Последняя модель GPT с улучшенным рассуждением' : 'Latest GPT model with enhanced reasoning'
+      description: language === 'ru'
+        ? `Последняя модель GPT с улучшенным рассуждением • ${priceListLabel}gpt-5.2`
+        : `Latest GPT model with enhanced reasoning • ${priceListLabel}gpt-5.2`
     },
     {
       name: 'Claude Sonnet 4.5',
       provider: 'Anthropic',
-      price: '$4.50 / $22.50',
+      price: formatPrice(4.5, 22.5),
       context: '200K tokens',
-      description: language === 'ru' ? 'Лучшая для сложных рассуждений и анализа' : 'Best for complex reasoning and analysis'
+      description: language === 'ru'
+        ? `Лучшая для сложных рассуждений и анализа • ${priceListLabel}claude-sonnet-4-5-20250929`
+        : `Best for complex reasoning and analysis • ${priceListLabel}claude-sonnet-4-5-20250929`
     },
     {
       name: 'DeepSeek V3.2',
       provider: 'DeepSeek',
-      price: '$0.42 / $0.63',
+      price: formatPrice(0.42, 0.63),
       context: '64K tokens',
-      description: language === 'ru' ? 'Самая экономичная топовая модель' : 'Most cost-effective top-tier model'
+      description: language === 'ru'
+        ? `Самая экономичная топовая модель • ${priceListLabel}deepseek-reasoner`
+        : `Most cost-effective top-tier model • ${priceListLabel}deepseek-reasoner`
     },
     {
       name: 'Gemini 3 Flash',
       provider: 'Google',
-      price: '$0.75 / $4.50',
+      price: formatPrice(0.75, 4.5),
       context: '1M tokens',
-      description: language === 'ru' ? 'Быстрая и доступная для больших объемов задач' : 'Fast and affordable for high-volume tasks'
+      description: language === 'ru'
+        ? `Быстрая и доступная для больших объемов задач • ${priceListLabel}gemini-3-flash-preview`
+        : `Fast and affordable for high-volume tasks • ${priceListLabel}gemini-3-flash-preview`
     }
   ];
 
@@ -947,10 +968,12 @@ response = client.chat.completions.create(
           <div className="mt-12 text-center">
             <p className="text-gray-400">
               {translations.pricing.pricingNote}
-              <a 
-                href="#" 
+              <a
+                href="/pl_10_1_2026.pdf"
                 onClick={() => trackCTAClick('view_pricing_table')}
                 className="text-purple-400 hover:text-purple-300 ml-2"
+                target="_blank"
+                rel="noreferrer"
               >
                 {translations.pricing.viewPricing}
               </a>
