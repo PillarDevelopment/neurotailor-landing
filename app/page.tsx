@@ -77,6 +77,7 @@ export default function TechCatalystLanding() {
         models: "Models & Pricing",
         api: "API",
         testimonials: "Testimonials",
+        priceList: "Price List",
         startFree: "Start Free"
       },
       hero: {
@@ -187,7 +188,7 @@ export default function TechCatalystLanding() {
           team: "Team management and analytics",
           contactSales: "Contact Sales"
         },
-        pricingNote: "All prices are per 1M tokens (input/output).",
+        pricingNote: "Retail prices per 1M tokens (input/output). Enterprise plans have special terms.",
         viewPricing: "View full pricing table"
       },
       testimonials: {
@@ -217,6 +218,7 @@ export default function TechCatalystLanding() {
         models: "Модели и цены",
         api: "API",
         testimonials: "Отзывы",
+        priceList: "Прайс-лист",
         startFree: "Начать бесплатно"
       },
       hero: {
@@ -327,7 +329,7 @@ export default function TechCatalystLanding() {
           team: "Управление командой и аналитика",
           contactSales: "Связаться с продажами"
         },
-        pricingNote: "Все цены указаны за 1M токенов (вход/выход).",
+        pricingNote: "Розничные цены за 1M токенов (вход/выход). Для Enterprise действуют специальные условия.",
         viewPricing: "Посмотреть полную таблицу цен"
       },
       testimonials: {
@@ -359,28 +361,28 @@ export default function TechCatalystLanding() {
     {
       name: 'GPT-5.2',
       provider: 'OpenAI',
-      price: language === 'ru' ? '₽176 / ₽1,414' : '$2.00 / $16.00',
+      price: '$2.63 / $21.00',
       context: '128K tokens',
       description: language === 'ru' ? 'Последняя модель GPT с улучшенным рассуждением' : 'Latest GPT model with enhanced reasoning'
     },
     {
       name: 'Claude Sonnet 4.5',
       provider: 'Anthropic',
-      price: language === 'ru' ? '₽303 / ₽1,515' : '$3.50 / $17.50',
+      price: '$4.50 / $22.50',
       context: '200K tokens',
       description: language === 'ru' ? 'Лучшая для сложных рассуждений и анализа' : 'Best for complex reasoning and analysis'
     },
     {
       name: 'DeepSeek V3.2',
       provider: 'DeepSeek',
-      price: language === 'ru' ? '₽56 / ₽169' : '$0.65 / $2.00',
+      price: '$0.42 / $0.63',
       context: '64K tokens',
       description: language === 'ru' ? 'Самая экономичная топовая модель' : 'Most cost-effective top-tier model'
     },
     {
       name: 'Gemini 3 Flash',
       provider: 'Google',
-      price: language === 'ru' ? '₽50 / ₽303' : '$0.60 / $3.50',
+      price: '$0.75 / $4.50',
       context: '1M tokens',
       description: language === 'ru' ? 'Быстрая и доступная для больших объемов задач' : 'Fast and affordable for high-volume tasks'
     }
@@ -470,6 +472,9 @@ export default function TechCatalystLanding() {
               <a href="#models" className="hover:text-purple-400 transition-colors">{translations.nav.models}</a>
               <a href="#api" className="hover:text-purple-400 transition-colors">{translations.nav.api}</a>
               <a href="#testimonials" className="hover:text-purple-400 transition-colors">{translations.nav.testimonials}</a>
+              <a href="/pl_10_1_2026.pdf" className="hover:text-purple-400 transition-colors" target="_blank" rel="noreferrer">
+                {translations.nav.priceList}
+              </a>
               
               {/* Language Toggle */}
               <div className="flex items-center space-x-2 px-3 py-1 bg-white/5 rounded-lg border border-white/10">
@@ -511,6 +516,9 @@ export default function TechCatalystLanding() {
               <a href="#models" className="block hover:text-purple-400 transition-colors">{translations.nav.models}</a>
               <a href="#api" className="block hover:text-purple-400 transition-colors">{translations.nav.api}</a>
               <a href="#testimonials" className="block hover:text-purple-400 transition-colors">{translations.nav.testimonials}</a>
+              <a href="/pl_10_1_2026.pdf" className="block hover:text-purple-400 transition-colors" target="_blank" rel="noreferrer">
+                {translations.nav.priceList}
+              </a>
               
               {/* Language Toggle Mobile */}
               <div className="flex items-center justify-between py-2">
@@ -1049,6 +1057,11 @@ response = client.chat.completions.create(
                 <li><a href="#features" className="hover:text-white transition-colors">{translations.nav.features}</a></li>
                 <li><a href="#models" className="hover:text-white transition-colors">{translations.nav.models}</a></li>
                 <li><a href="#api" className="hover:text-white transition-colors">{translations.nav.api}</a></li>
+                <li>
+                  <a href="/pl_10_1_2026.pdf" className="hover:text-white transition-colors" target="_blank" rel="noreferrer">
+                    {translations.nav.priceList}
+                  </a>
+                </li>
                 <li><a href="#" className="hover:text-white transition-colors">{translations.devices.webChat.title}</a></li>
               </ul>
             </div>
