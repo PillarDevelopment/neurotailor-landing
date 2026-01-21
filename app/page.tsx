@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { ChevronRight, Code, Zap, Shield, Users, Star, ArrowRight, Play, Check, X, Menu, Sparkles, Cpu, Clock, RussianRuble, Rocket, GitBranch, Globe, BarChart, Brain, Network, Layers, Server, CreditCard, MessageSquare, Smartphone, FileText, TrendingUp, Lock } from 'lucide-react';
+import { ChevronRight, Code, Zap, Shield, Users, Star, ArrowRight, Play, Check, X, Menu, Sparkles, Cpu, Clock, RussianRuble, Rocket, GitBranch, Globe, BarChart, Brain, Network, Layers, Server, CreditCard, MessageSquare, Smartphone, FileText, TrendingUp, Lock, Mail, Send, Linkedin } from 'lucide-react';
 import { trackCTAClick, trackPricingSelect, trackPlatformView, trackMobileMenuToggle } from '@/lib/analytics';
 import ApplicationModal from '@/components/Modal/ApplicationModal';
 
@@ -209,7 +209,8 @@ export default function TechCatalystLanding() {
         product: "Product",
         company: "Company",
         legal: "Legal",
-        copyright: "© 2025 Tech Catalyst. All rights reserved."
+        contacts: "Contacts",
+        copyright: "© 2026 Tech Catalyst. All rights reserved."
       }
     },
     ru: {
@@ -350,7 +351,8 @@ export default function TechCatalystLanding() {
         product: "Продукт",
         company: "Компания",
         legal: "Правовая информация",
-        copyright: "© 2025 Tech Catalyst. Все права защищены."
+        contacts: "Контакты",
+        copyright: "© 2026 Tech Catalyst. Все права защищены."
       }
     }
   };
@@ -1065,7 +1067,7 @@ response = client.chat.completions.create(
       {/* Footer */}
       <footer className="relative border-t border-white/10 py-12 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Layers className="w-8 h-8 text-purple-500" />
@@ -1073,7 +1075,37 @@ response = client.chat.completions.create(
               </div>
               <p className="text-gray-400">{translations.footer.tagline}</p>
             </div>
-            
+
+            <div id="contacts">
+              <h4 className="font-semibold mb-4">{translations.footer.contacts}</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <a href="mailto:info@2rm.ru" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                    <Mail className="w-4 h-4" />
+                    info@2rm.ru
+                  </a>
+                </li>
+                <li className="flex flex-wrap items-center gap-2">
+                  <span>Ivan Borisov (CTO) —</span>
+                  <a href="https://t.me/pillardev" className="inline-flex items-center gap-2 hover:text-white transition-colors" target="_blank" rel="noreferrer">
+                    <Send className="w-4 h-4" />
+                    @pillardev
+                  </a>
+                  <a href="https://www.linkedin.com/in/borisov-ivan/" className="inline-flex items-center gap-2 hover:text-white transition-colors" target="_blank" rel="noreferrer">
+                    <Linkedin className="w-4 h-4" />
+                    LinkedIn
+                  </a>
+                </li>
+                <li className="flex flex-wrap items-center gap-2">
+                  <span>Vit Kit (COO) —</span>
+                  <a href="https://t.me/masterofunreal" className="inline-flex items-center gap-2 hover:text-white transition-colors" target="_blank" rel="noreferrer">
+                    <Send className="w-4 h-4" />
+                    @masterofunreal
+                  </a>
+                </li>
+              </ul>
+            </div>
+
             <div>
               <h4 className="font-semibold mb-4">{translations.footer.product}</h4>
               <ul className="space-y-2 text-gray-400">
@@ -1085,29 +1117,9 @@ response = client.chat.completions.create(
                     {translations.nav.priceList}
                   </a>
                 </li>
-                <li><a href="#" className="hover:text-white transition-colors">{translations.devices.webChat.title}</a></li>
               </ul>
             </div>
             
-            <div>
-              <h4 className="font-semibold mb-4">{translations.footer.company}</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">{language === 'ru' ? 'О нас' : 'About'}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{language === 'ru' ? 'Блог' : 'Blog'}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{language === 'ru' ? 'Контакты' : 'Contact'}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{language === 'ru' ? 'Поддержка' : 'Support'}</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4">{translations.footer.legal}</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">{language === 'ru' ? 'Политика конфиденциальности' : 'Privacy Policy'}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{language === 'ru' ? 'Условия использования' : 'Terms of Service'}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{language === 'ru' ? 'Безопасность' : 'Security'}</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">{language === 'ru' ? 'Соответствие' : 'Compliance'}</a></li>
-              </ul>
-            </div>
           </div>
           
           <div className="pt-8 border-t border-white/10 text-center text-gray-400">
