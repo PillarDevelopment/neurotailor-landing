@@ -837,12 +837,15 @@ response = client.chat.completions.create(
             </div>
 
             <div className="mt-8 text-center">
-              <button 
+              <a
+                href="/pl_10_1_2026.pdf"
                 onClick={() => trackCTAClick('view_all_models')}
-                className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-lg font-medium transition-all"
+                className="inline-flex px-6 py-3 bg-white/10 hover:bg-white/20 rounded-lg font-medium transition-all"
+                target="_blank"
+                rel="noreferrer"
               >
                 {translations.models.viewAll}
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -869,7 +872,7 @@ response = client.chat.completions.create(
                 {translations.devices.webChat.desc}
               </p>
               <button 
-                onClick={() => trackCTAClick('try_web_chat')}
+                onClick={() => handleCTAClick('try_web_chat')}
                 className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg font-medium hover:from-blue-600 hover:to-cyan-600 transition-all"
               >
                 {translations.devices.webChat.button}
@@ -885,7 +888,7 @@ response = client.chat.completions.create(
                 {translations.devices.telegram.desc}
               </p>
               <button 
-                onClick={() => trackCTAClick('try_telegram_bot')}
+                onClick={() => handleCTAClick('try_telegram_bot')}
                 className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all"
               >
                 {translations.devices.telegram.button}
